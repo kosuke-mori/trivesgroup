@@ -5,18 +5,6 @@ import Link from "next/link";
 
 const navItems = [
   { name: "Work", href: "#work" },
-  {
-    name: "Sectors",
-    href: "#sectors",
-    children: [
-      { name: "Technology", href: "#technology" },
-      { name: "Healthcare", href: "#healthcare" },
-      { name: "Finance", href: "#finance" },
-      { name: "Consumer", href: "#consumer" },
-    ],
-  },
-  { name: "About", href: "#about" },
-  { name: "Approach", href: "#approach" },
   { name: "Contact", href: "#contact" },
 ];
 

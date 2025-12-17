@@ -13,8 +13,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Trives Group - Strategic Consulting",
-  description: "Bold strategy. Big thinking. We partner with ambitious companies to build brands that matter.",
+  title: "Trives Group",
+  description: "We partner with ambitious companies to build brands that matter.",
 };
 
 export default function RootLayout({

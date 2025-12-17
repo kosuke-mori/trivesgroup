@@ -1,36 +1,32 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import bookshelfImg from "@/image/bookshelf.png";
 
 const testimonials = [
   {
     id: 1,
     quote:
-      "Trives Group helped us navigate a critical pivot in our business strategy. Their insights were invaluable in clarifying our market position and accelerating our growth trajectory.",
-    author: "Sarah Chen",
-    title: "CEO, TechVenture",
+      "Trives helped us navigate a critical pivot in our business strategy. Their insights were invaluable in clarifying our positioning and accelerating our growth trajectory.",
+    author: "Sarah ",
+    title: "",
   },
   {
     id: 2,
     quote:
-      "Working with Trives was transformative. They challenged our assumptions, put the customer at the core of our strategy, and helped us become a market leader in our category.",
-    author: "Michael Rodriguez",
-    title: "Founder, MedCore Solutions",
+      "Their strategic approach and no-nonsense methodology helped us cut through complexity and focus on what truly matters. An invaluable partner for any growing company.",
+    author: "David P",
+    title: "Managing Director",
   },
   {
     id: 3,
     quote:
       "The team brought fresh, disruptive thinking to our industry where most are reluctant to push boundaries. They've been a critical partner in establishing our brand presence.",
-    author: "Emily Watson",
-    title: "CMO, FinanceFlow",
+    author: "Yuki Y",
+    title: "",
   },
-  {
-    id: 4,
-    quote:
-      "Their strategic approach and no-nonsense methodology helped us cut through complexity and focus on what truly matters. An invaluable partner for any growing company.",
-    author: "David Park",
-    title: "Managing Director, Apex Ventures",
-  },
+
 ];
 
 export default function Testimonials() {
@@ -47,15 +43,15 @@ export default function Testimonials() {
   return (
     <section className="bg-[#161717] py-24 px-6 lg:px-8 relative overflow-hidden">
       {/* Background image overlay */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
+      <div className="absolute inset-0 opacity-10">
+        <Image
+          src={bookshelfImg}
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
       <div className="mx-auto max-w-7xl relative z-10">
         <p className="text-sm font-medium tracking-widest text-[#ACACA7] uppercase mb-16 text-center">

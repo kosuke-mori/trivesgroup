@@ -1,12 +1,9 @@
 const clients = [
-  { name: "Acme Corp", logo: "ACME" },
-  { name: "GlobalTech", logo: "GLOBALTECH" },
-  { name: "Innovate Inc", logo: "INNOVATE" },
-  { name: "FutureCo", logo: "FUTURECO" },
-  { name: "NextGen", logo: "NEXTGEN" },
-  { name: "PrimeVentures", logo: "PRIME" },
-  { name: "Apex Group", logo: "APEX" },
-  { name: "Vertex Labs", logo: "VERTEX" },
+  { name: "Awarefy", logo: "Awarefy" },
+  { name: "Fiivs", logo: "Fiivs" },
+  { name: "Monarch", logo: "Monarch" },
+  { name: "Noom", logo: "Noom" },
+  { name: "Sorotori", logo: "Sorotori" },
 ];
 
 export default function ClientLogos() {
@@ -14,7 +11,7 @@ export default function ClientLogos() {
     <section className="py-20 px-6 lg:px-8 bg-white border-b border-[#DBDAD0]">
       <div className="mx-auto max-w-7xl">
         <p className="text-sm font-medium tracking-widest text-[#ACACA7] uppercase mb-12 text-center">
-          Trusted Partners
+          Clients
         </p>
 
         {/* Logo grid */}

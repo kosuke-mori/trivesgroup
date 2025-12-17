@@ -1,97 +1,24 @@
-"use client";
-
-import { useState } from "react";
+import Link from "next/link";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message. We'll be in touch soon.");
-    setFormData({ name: "", email: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
     <section id="contact" className="py-24 px-6 lg:px-8 bg-white">
-      <div className="mx-auto max-w-2xl">
-        <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl lg:text-5xl text-[#161717] text-center mb-12">
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl lg:text-5xl text-[#161717] mb-8">
           Let&apos;s do this.
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-[#45494B] mb-2"
-            >
-              Name <span className="text-[#ACACA7]">(required)</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-[#DBDAD0] rounded-sm focus:outline-none focus:border-[#161717] transition-colors"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-[#45494B] mb-2"
-            >
-              Email <span className="text-[#ACACA7]">(required)</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-[#DBDAD0] rounded-sm focus:outline-none focus:border-[#161717] transition-colors"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-[#45494B] mb-2"
-            >
-              Message <span className="text-[#ACACA7]">(required)</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={5}
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-[#DBDAD0] rounded-sm focus:outline-none focus:border-[#161717] transition-colors resize-none"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full sm:w-auto px-8 py-3 bg-[#161717] text-white font-medium hover:bg-[#45494B] transition-colors rounded-sm"
-          >
-            Submit
-          </button>
-        </form>
+        <Link
+          href="https://light-starburst-795.notion.site/2652634eb2d680119ba5db91eab359b7?pvs=105"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-[#161717] text-white font-medium hover:bg-[#45494B] transition-colors rounded-sm"
+        >
+          Get in touch
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
       </div>
     </section>
   );
