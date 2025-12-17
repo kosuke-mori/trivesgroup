@@ -71,7 +71,7 @@ export default function FeaturedWork() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-8">
         <Link
-          href="#"
+          href="#contact"
           className="inline-flex items-center gap-2 text-white hover:text-[#DBDAD0] transition-colors"
         >
           Contact us
