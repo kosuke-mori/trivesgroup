@@ -10,7 +10,6 @@ const navItems = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
@@ -26,32 +25,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:gap-8">
             {navItems.map((item) => (
-              <div
+              <Link
                 key={item.name}
-                className="relative"
-                onMouseEnter={() => item.children && setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                href={item.href}
+                className="text-sm font-medium text-[#45494B] transition-colors hover:text-[#161717]"
               >
-                <Link
-                  href={item.href}
-                  className="text-sm font-medium text-[#45494B] transition-colors hover:text-[#161717]"
-                >
-                  {item.name}
-                </Link>
-                {item.children && activeDropdown === item.name && (
-                  <div className="absolute left-0 top-full mt-2 w-48 rounded-md bg-white py-2 shadow-lg ring-1 ring-black/5">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.name}
-                        href={child.href}
-                        className="block px-4 py-2 text-sm text-[#45494B] hover:bg-[#DBDAD0]/30 hover:text-[#161717]"
-                      >
-                        {child.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                {item.name}
+              </Link>
             ))}
           </div>
 
@@ -86,29 +66,14 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-[#DBDAD0] py-4">
             {navItems.map((item) => (
-              <div key={item.name}>
-                <Link
-                  href={item.href}
-                  className="block py-3 text-base font-medium text-[#45494B] hover:text-[#161717]"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-                {item.children && (
-                  <div className="pl-4">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.name}
-                        href={child.href}
-                        className="block py-2 text-sm text-[#ACACA7] hover:text-[#161717]"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {child.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block py-3 text-base font-medium text-[#45494B] hover:text-[#161717]"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
             ))}
           </div>
         )}
