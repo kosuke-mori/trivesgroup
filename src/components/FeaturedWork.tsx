@@ -8,7 +8,7 @@ import meltedMatchaImg from "@/image/Melted-matcha.webp";
 import tinnedInJapanImg from "@/image/Tinned-in-Japan.jpg";
 import tokyoSkylineImg from "@/image/tokyo-skyline-v2.webp";
 
-const projects: { id: number; name: string; category: string; image: StaticImageData }[] = [
+const projects: { id: number; name: string; category: string; image: StaticImageData; href?: string }[] = [
   {
     id: 1,
     name: "Product & Marketing consultancy",
@@ -20,12 +20,14 @@ const projects: { id: number; name: string; category: string; image: StaticImage
     name: "Melted Matcha",
     category: "Food & Beverage",
     image: meltedMatchaImg,
+    href: "https://meltedmatcha.com/",
   },
   {
     id: 3,
     name: "Tinned in Japan",
     category: "Product",
     image: tinnedInJapanImg,
+    href: "https://tinnedinjapan.com/",
   },
   {
     id: 4,
@@ -50,7 +52,9 @@ export default function FeaturedWork() {
           {projects.map((project) => (
             <Link
               key={project.id}
-              href="#"
+              href={project.href || "#"}
+              target={project.href ? "_blank" : undefined}
+              rel={project.href ? "noopener noreferrer" : undefined}
               className="group relative flex-shrink-0 w-[300px] sm:w-[400px] lg:w-[500px] aspect-[4/3] overflow-hidden rounded-sm"
             >
               <Image
